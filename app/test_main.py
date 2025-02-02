@@ -1,6 +1,7 @@
 import pytest
 from app.main import check_password
 
+
 @pytest.mark.parametrize(
     "password, expected_result",
     [
@@ -12,5 +13,5 @@ from app.main import check_password
         ("abc1234567890%", False),
     ]
 )
-def test_check_password(password, expected_result):
-    assert check_password(password) == expected_result, f"Expected {expected_result} for password '{password}'"
+def test_check_password(password: str, expected_result: bool) -> None:
+    assert check_password(password) == expected_result
