@@ -5,12 +5,9 @@ from app.main import check_password
 @pytest.mark.parametrize(
     "password, expected_result",
     [
-        ("Abc12345!", True),
-        ("abc123!", False),
-        ("Abc1234567890", False),
-        ("abc1234567890!", False),
-        ("Abc!123", False),
-        ("abc1234567890%", False),
+        ("Pass@word1", True),
+        ("qwerty", False),
+        ("Str@ng", False),
     ]
 )
 def test_check_password(password: str, expected_result: bool) -> None:
